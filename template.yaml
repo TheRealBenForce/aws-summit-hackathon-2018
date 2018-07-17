@@ -22,7 +22,7 @@ Resources:
       Runtime: nodejs6.10
       Timeout: 15 # in seconds
       CodeUri: .
-      Policies: 
+      Policies:
         # Add other AWS Managed policies as necessary
         - AmazonDynamoDBReadOnlyAccess
       Environment:
@@ -59,6 +59,7 @@ Resources:
   HotelDBInstance:
     Type: AWS::RDS::DBInstance
     Properties:
+      PubliclyAccessible: True
       DBInstanceClass: db.t2.small
       Engine: aurora
       # EngineVersion: 5.6.39
